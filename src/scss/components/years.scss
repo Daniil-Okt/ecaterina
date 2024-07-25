@@ -1,6 +1,33 @@
+.years-fon {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(1920);
+        height: rem(3348);
+        background: url(@img/years-fon.png) no-repeat center center / contain;
+        top:rem(-400);
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        @media(max-width:1000px){
+            top:rem(-700);
+            width: rem(1070);
+            height: rem(2498);
+            opacity: 0.4;
+        }
+        @media(max-width:420px){
+            opacity: 0.3;
+        }
+    }
+}
 .years {
     padding-top: rem(64);
+    
+
     &__container {
+
     }
 
     &__title {
@@ -66,6 +93,13 @@
             height: 100%;
             object-fit: cover;
         }
+
+        &.one-img {
+            @media(max-width:1440px){
+                aspect-ratio: 1 / 1;
+            }
+        }
+
     }
 }
 .title-page {

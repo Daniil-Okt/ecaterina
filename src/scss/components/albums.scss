@@ -1,9 +1,42 @@
 .albums {
     padding-top: rem(196);
     padding-bottom: rem(132);
+    position: relative;
+ 
     @media(max-width:768px){
         padding-top: rem(96);
         padding-bottom: rem(32);
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(1920);
+        height: rem(3348);
+        background: url(@img/albums-fon.png) no-repeat center center / contain;
+        top:rem(-450);
+        right: 0;
+        z-index: -1;
+        pointer-events: none;
+        @media(max-width:1440px){
+            opacity: 0.6;
+            width: rem(1520);
+            height: rem(2948);
+        }
+        @media(max-width:768px){
+            background: url(@img/albums-fon-mob.png) no-repeat center center / contain;
+            top:rem(0);
+            width: rem(768);
+            height: rem(1900);
+            opacity: 1;
+        }
+        @media(max-width:420px){
+            background: url(@img/albums-fon.png) no-repeat center center / contain;
+            top:rem(-500);
+            width: rem(1070);
+            height: rem(2498);
+            opacity: 0.3;
+        }
     }
     &__container {
     }

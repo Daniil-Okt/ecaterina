@@ -8,7 +8,7 @@
  */
 // import MousePRLX from './libs/parallaxMouse'
 // import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
@@ -111,39 +111,52 @@ toggleLinkMenuNoOpen()
 
 /* Инициализация  swiper =================================================================================
 */
-// const swiper = new Swiper('.swiper', {
-//   speed: 800,
-//   spaceBetween: 16,
-//   slidesPerView: 1.4,
-//   modules: [Autoplay, Navigation, Pagination],
+const swiper = new Swiper('.records__swiper', {
+  speed: 1300,
+  spaceBetween: 20,
+  slidesPerView: 1,
+  modules: [Navigation, Pagination],
 //   loop: true,
-//   initialSlide: 1,
+  initialSlide: 0,
 //   autoplay: {
 //     delay: 2500,
 //     stopOnLastSlide: false,
 //     disableOnIteration: false,
 //   },
-//   navigation: {
-//     prevEl: ".reviews__button-slider-prev",
-//     nextEl: ".reviews__button-slider-next"
-//   },
+  navigation: {
+    prevEl: ".records__button-prev",
+    nextEl: ".records__button-next"
+  },
 //   pagination: {
 //     el: ".card-slider__pagination",
 //     dynamicBullets: true,
 //     clickable: true,
 //   },
-//   breakpoints: {
-//     1400: {
-//       slidesPerView: 4,
-//       spaceBetween: 24,
-//   	},
-//     1650: {
-//         slidesPerView: 4,
-//         spaceBetween: 48,
-//     }
-//   },
-// });
+  breakpoints: {
+    1340: {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+    }
+  },
+});
 
+const swiperGallery = new Swiper('.gallery__swiper', {
+	speed: 1300,
+	spaceBetween: 16,
+	slidesPerView: 'auto',
+	modules: [Navigation, Pagination],
+	initialSlide: 0,
+	navigation: {
+	  prevEl: ".records__button-prev",
+	  nextEl: ".records__button-next"
+	},
+	// breakpoints: {
+	//   769: {
+	// 	  slidesPerView: 'auto',
+	// 	  spaceBetween: 20,
+	//   }
+	// },
+  });
 
 /* Валидация формы ======================================================================================
 * В константу записывает нужную форму
@@ -187,3 +200,66 @@ if (albumsItems.length > 0) {
 		})
 	});
 }
+
+
+//вставка видео ==========================================================
+"use strict";
+function r(f) {
+  /in/.test(document.readyState)
+    ? setTimeout(function () {
+        r(f);
+      }, 9)
+    : f();
+}
+
+r(function () {
+  if (!document.getElementsByClassName) {
+    // IE8 support
+    var getElementsByClassName = function (node, classname) {
+      var a = [];
+      var re = new RegExp("(^| )" + classname + "( |$)");
+      var els = node.getElementsByTagName("*");
+      for (var i = 0, j = els.length; i < j; i++)
+        if (re.test(els[i].className)) a.push(els[i]);
+      return a;
+    };
+    var videos = getElementsByClassName(document.body, "youtube");
+  } else {
+    var videos = document.getElementsByClassName("youtube");
+  }
+
+  var nb_videos = videos.length;
+  for (var i = 0; i < nb_videos; i++) {
+    // Based on the YouTube ID, we can easily find the thumbnail image
+    videos[i].style.backgroundImage =
+      "url(http://i.ytimg.com/vi/" + videos[i].id + "/sddefault.jpg)";
+
+    // Overlay the Play icon to make it look like a video player
+    var play = document.createElement("div");
+    play.className = "play"; // Use `className` instead of `setAttribute("class", ...)`
+    videos[i].appendChild(play);
+
+    videos[i].onclick = function () {
+      // Create an iFrame with autoplay set to true
+      var iframe = document.createElement("iframe");
+      var iframe_url =
+        "https://www.youtube.com/embed/" +
+        this.id +
+        "?autoplay=1&autohide=1";
+      if (this.getAttribute("data-params")) iframe_url += "&" + this.getAttribute("data-params");
+      iframe.setAttribute("src", iframe_url);
+      iframe.setAttribute("frameborder", "0");
+	  iframe.setAttribute("allowfullscreen", "1");
+	  iframe.setAttribute("autoplay", "1");
+	  
+
+      // The height and width of the iFrame should be the same as parent
+      iframe.style.width = this.style.width;
+      iframe.style.height = this.style.height;
+
+      // Replace the YouTube thumbnail with YouTube Player
+      this.parentNode.replaceChild(iframe, this);
+	//   iframe.click();
+    };
+  }
+});

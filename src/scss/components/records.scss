@@ -1,0 +1,100 @@
+.records {
+    padding-top: rem(196);
+    position: relative;
+    // padding-bottom: rem(132);
+    @media(max-width:768px){
+        padding-top: rem(96);
+        // padding-bottom: rem(32);
+    }
+
+ 
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(1920);
+        height: rem(3666);
+        background: url(@img/records-fon.png) no-repeat center center / contain;
+        top:rem(-480);
+        // top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        @media(max-width:1440px){
+            display: none;
+        }
+    }
+    &__container {
+    }
+
+    &__title {
+        margin-bottom: rem(32);
+    }
+
+    &__content {
+        @media(max-width:768px){
+            // overflow: hidden;
+        }
+    }
+
+    &__swiper {
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+
+    &__button-row {
+        display: flex;
+        gap: rem(16);
+        margin-top: rem(32);
+        @media(max-width:580px){
+            justify-content: center;
+        }
+    }
+
+    &__button-prev {
+    }
+
+    &__button-swiper {
+        width: rem(64);
+        transition: all 0.3s ease  0s;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.6;
+        }
+        svg {
+            width: 100%;
+        }
+
+    }
+
+    &__button-next {
+    }
+}
+
+.records-slide {
+    width: rem(930);
+    border-radius: 16px;
+    @media(max-width:1340px){
+        width: 100%;
+    }
+    &__video {
+        margin-bottom: rem(32);
+        transition: all 0.5s ease  0s;
+        .swiper-slide-active  & {
+            box-shadow: -9px 4px 70px 0 rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        line-height: 120%;
+        opacity: 0;
+        transition: all 0.5s ease  0s;
+        .swiper-slide-active  & {
+            opacity: 1;
+        }
+    }
+}
