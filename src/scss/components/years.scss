@@ -1,0 +1,72 @@
+.years {
+    padding-top: rem(64);
+    &__container {
+    }
+
+    &__title {
+        font-size: rem(76);
+        margin-bottom: rem(32);
+        line-height: 100%;
+        @media(max-width:900px){
+            @include adaptiveClamp(font-size, 76, 48);
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32);
+        font-size: rem(24);
+        color: #c6c6c6;
+        @media(max-width:768){
+            font-size: rem(16);
+        }
+        b {
+            font-size: rem(32);
+            font-weight: 600;
+            color: #fff;
+            &.yellow {
+                color: #fdb94d;
+            }
+            @media(max-width:768px){
+               font-size: rem(24);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(64);
+        }
+        // margin-top: rem(64);
+        &:first-child {
+            // margin-top: 0 !important;
+        }
+    }
+
+    &__row-text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+    }
+
+    &__img-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(20);
+        @media(max-width:800px){
+            grid-template-columns: 1fr;
+            gap: rem(8);
+        }
+    }
+
+    &__img-item {
+        border-radius: 16px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.title-page {
+}

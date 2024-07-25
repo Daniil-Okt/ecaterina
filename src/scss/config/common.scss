@@ -1,0 +1,200 @@
+// Заголовки, общие БЄМ блоки и проче...
+body {
+    background: rgba(27, 27, 27, 1);
+    color: var(--white);
+    line-height: 140%;
+}
+
+
+h1, h2 {
+    font-family: Good Vibes Pro;
+}
+* {
+    line-height: 140%;
+}
+
+.page-container {
+    max-width: rem(970);
+    @media(max-width:1440px){
+        max-width: rem(732);
+    }
+    @media(max-width:768px){
+        max-width: rem(580);
+    }
+}
+
+.yellow {
+    color: #fdb94d;
+}
+
+h3, p {
+        font-size: rem(24);
+        color: #c6c6c6;
+        @media(max-width:768px){
+            font-size: rem(16);
+        }
+        b {
+            font-size: rem(32);
+            font-weight: 600;
+            color: #fff;
+            @media(max-width:768px){
+                font-size: rem(24);
+            }
+            &.yellow {
+                color: #fdb94d;
+            }
+            
+        }
+}
+
+
+.title-line {
+    display: inline-block;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(138);
+        height: rem(1);
+        background: #fff;
+        top:50%;
+        left: rem(-138);
+        transform: translateX(-25px);
+        @media(max-width:1350px){
+            width: rem(78);
+            transform: translateX(0px);
+            left: 0;
+        }
+    }
+
+    @media(max-width:1350px){
+        padding-left: rem(89);
+    }
+}
+
+
+
+.button {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    gap: rem(10.67);
+    font-size: 21px;
+    line-height: 140%;
+    color: #1b1b1b;
+    padding: rem(12) rem(22.33);
+    background: var(--white);
+    border-radius: 11px;
+    transition: all 0.3s ease  0s;
+    cursor: pointer;
+    svg {
+        path {
+            transition: all 0.3s ease  0s;
+        }
+    }
+    &:hover {
+        color: var(--yellow);
+        svg {
+            path {
+                stroke:var(--yellow);
+            }
+        }
+    }
+    @media(max-width:1600px){
+        padding: rem(9) rem(16.4);
+        gap: rem(8);
+        font-size: rem(16);
+        border-radius: 8px;
+        svg {
+            width: rem(24);
+            height: rem(24);
+        }
+    }
+}
+.button-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+.swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-left: rem(-5);
+}       
+.swiper-pagination-bullet {
+    width: rem(24);
+    height: rem(24);
+    min-width: rem(24);
+    min-height: rem(24);
+    border: rem(4) solid #1b1b1b;
+    background-color: #AAAAAA;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out  0s;
+    margin: 0 rem(5);
+}
+.swiper-pagination-bullet-active {
+    border: rem(4) solid rgb(55, 55, 55);
+    background-color: var(--yellow);
+    width: rem(24);
+    height: rem(24);
+    min-width: rem(24);
+    min-height: rem(24);
+}
+.swiper-pagination-bullet-active-next, .swiper-pagination-bullet-active-next-next, .swiper-pagination-bullet-active-prev, .swiper-pagination-bullet-active-prev-prev {
+    transform: scale(1) !important;
+}
+
+input.text {
+    font-size: rem(24);
+    line-height: 140%;
+    color: var(--black);
+    border-bottom: rem(1.33) solid #aaa;
+    padding: rem(21.5) rem(21.33);
+    background: none;
+    width: 100%;
+    border-radius: 0;
+    &::placeholder {
+        color: #aaa;
+    }
+
+    @media(max-width:1600px){
+        font-size: rem(18);
+        padding: rem(16);
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 50px rgb(38,38,38) inset; /* измените цвет фона и размер тени по вашему усмотрению */
+    -webkit-text-fill-color: rgb(0, 0, 0); /* измените цвет текста по вашему усмотрению */
+  
+}
+
+input:-moz-placeholder {
+    color: black; /* измените цвет текста по вашему усмотрению */
+}
+
+input:-ms-input-placeholder {
+    color: black; /* измените цвет текста по вашему усмотрению */
+}
+
+input::placeholder {
+    color: black; /* измените цвет текста по вашему усмотрению */
+}
+
+
+input {
+    transition: all 0.3s ease  0s;
+}
+input._error {
+    border-color: red;
+}
+
+.hf-message-success {
+    display: none;
+}

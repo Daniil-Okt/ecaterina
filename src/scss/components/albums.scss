@@ -1,0 +1,196 @@
+.albums {
+    padding-top: rem(196);
+    padding-bottom: rem(132);
+    @media(max-width:768px){
+        padding-top: rem(96);
+        padding-bottom: rem(32);
+    }
+    &__container {
+    }
+
+    &__title {
+        font-size: rem(96);
+        margin-bottom: rem(32);
+        line-height: 100%;
+        @media(max-width:768px){
+            font-size: rem(48);
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        @media(max-width:1040px){
+            align-items: center;
+        }
+    }
+
+    &__item {
+    }
+}
+.page-container {
+}
+.albums-item {  
+    position: relative;
+    padding-top: rem(32);
+    padding-bottom: rem(32);
+    border-top: 1px solid #646464;
+    overflow: hidden;
+    &:last-child {
+        border-bottom: 1px solid #646464;
+    }
+
+    &__title-tab {
+        line-height: 140%;
+        max-width: rem(930);
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        transition: all 0s ease  0.2s;
+        max-height: 1000px;
+        padding-top: rem(15);
+        padding-bottom: rem(15);
+        .active & {
+            max-height: 0;
+            transition: all 0s ease  0s;
+            padding-top: 0;
+            padding-bottom: 0;
+            // display: none;
+        }
+
+        @media(max-width:1440px){
+            max-width: rem(692);
+        }
+        @media(max-width:1040px){
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    @media(max-width:1040px){
+        max-width: rem(692);
+        width: 100%;
+    }
+    @media(max-width:768px){
+        max-width: rem(540);
+    }
+    &__number {
+        position: absolute;
+        left: 0;
+        top: rem(32);
+        font-size: rem(76);
+        font-family: Good Vibes Pro;
+        line-height: 100%;
+        @media(max-width:1040px){
+            position: relative;
+            top: 0;
+            margin-bottom: rem(24);
+        }
+        @media(max-width:768px){
+            font-size: rem(32);
+        }
+    }
+
+    &__content {
+        max-width: rem(930);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width:1440px){
+            max-width: rem(692);
+        }
+        @media(max-width:1040px){
+            flex-direction: column;
+            gap: rem(24);
+        }
+
+        transition: all 0.3s ease  0s;
+        max-height: 0;
+        // overflow: hidden;
+        opacity: 0;
+
+        .active & {
+            // transition: all 0.3s ease  0s;
+            max-height: 1000px;
+            opacity: 1;
+        }
+    }
+
+    &__body {
+        h3 {
+            margin-bottom: rem(32);
+        }
+    }
+
+    &__text {
+        margin-bottom: rem(88);
+        @media(max-width:1140px){
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__button-row {
+        display: flex;
+        gap: rem(16);
+        @media(max-width:1040px){
+            margin-top: rem(32);
+        }
+    }
+
+    &__button {
+        padding: rem(16);
+        background-color: rgba(255, 255, 255, 0.1);
+        min-height: rem(70);
+        max-width: 100%;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media(max-width:1600px){
+            padding: rem(16);
+            font-size: rem(16);
+            border-radius: 12px;
+            svg {
+                width: 100%;
+            }
+        }
+        @media(max-width:768px){
+            padding: rem(12);
+            min-height: rem(47);
+        }
+    }
+    
+    &__img {
+        width: rem(296);
+        max-width: rem(296);
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-right: rem(-158);
+        @media(max-width:1440px){
+            margin-right: rem(-355);
+        }
+        @media(max-width:1435px){
+            margin-right: rem(-158);
+        }
+        @media(max-width:1040px){
+            margin-right: 0;
+            width: 100%;
+            max-width: 100%;
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__img-body {
+        display: block;
+        @media(min-width:1041px){
+            display: none;
+        }
+    }
+}
+

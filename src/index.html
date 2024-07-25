@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Главная'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+        @@include('html/about.html')
+        @@include('html/years.html')
+        @@include('html/albums.html')
+        <div class="years">
+          <div class="years__container page-container">
+              <h2 class="years__title title-line">
+                2010-2015
+              </h2>
+              <div class="years__body">
+                <div class="years__row-text">
+                <h3>
+                    <b>В декабре 2010 по 2015г. год в рамках проекта «Дмитрий Хворостовский и его друзья» </b>
+                </h3>
+                <p>
+                  <b>Екатерина совершила турне по России.</b>
+                </p>
+                </div>
+                <p>
+                  Концерты прошли в Москве, Санкт-Петербурге, Тюмени и в Екатеринбурге. Она ворвалась в оперный мир как метеор и сразу же заявила о себе!
+                </p>
+                <div class="years__img-item">
+                  <img src="@img/years-img7.png" alt="">
+                </div>
+              </div>
+          </div>
+        </div>
+        @@include('html/records.html')
+        
+      </main>
+
+      @@include('html/footer.html')
+    </div>
+
+    <!-- @@include('html/popup.html') -->
+  </body>
+</html>
