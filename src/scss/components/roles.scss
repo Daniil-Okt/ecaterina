@@ -1,0 +1,82 @@
+.roles {
+    padding-top: rem(150);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(1920);
+        height: rem(3348);
+        background: url(@img/years-fon.png) no-repeat center center / contain;
+        top:rem(-400);
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        @media(max-width:1000px){
+            top:rem(-700);
+            width: rem(1070);
+            height: rem(2498);
+            opacity: 0.6;
+        }
+    }
+    @media(max-width:520px){
+        padding-top: rem(96);
+    }
+    &__container {
+    }
+
+    &__title {
+        margin-bottom: rem(64);
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: rem(64);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: rem(48);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32);
+
+        h3 {
+            position: relative;
+            padding-left: rem(128);
+            &::before {
+                position: absolute;
+                content: '';
+                width: rem(96);
+                height: rem(1);
+                background: rgba(255, 255, 255, 1);
+                top:50%;
+                transform: translateY(-50%);
+                left: 0;
+                @media(max-width:520px){
+                    width: rem(24);
+                }
+            }
+            @media(max-width:520px){
+                padding-left: rem(56);
+            }
+        }
+    }
+    .years__img-row {
+        margin-top: rem(32);
+    }
+}
+
+.years {
+
+    &__img-row {
+    }
+
+    &__img-item {
+    }
+}

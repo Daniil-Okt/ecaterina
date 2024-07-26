@@ -140,23 +140,23 @@ const swiper = new Swiper('.records__swiper', {
   },
 });
 
-const swiperGallery = new Swiper('.gallery__swiper', {
-	speed: 1300,
-	spaceBetween: 16,
-	slidesPerView: 'auto',
-	modules: [Navigation, Pagination],
-	initialSlide: 0,
-	navigation: {
-	  prevEl: ".records__button-prev",
-	  nextEl: ".records__button-next"
-	},
-	// breakpoints: {
-	//   769: {
-	// 	  slidesPerView: 'auto',
-	// 	  spaceBetween: 20,
-	//   }
-	// },
-  });
+// const swiperGallery = new Swiper('.gallery__swiper', {
+// 	speed: 1300,
+// 	spaceBetween: 16,
+// 	slidesPerView: 'auto',
+// 	modules: [Navigation, Pagination],
+// 	initialSlide: 0,
+// 	navigation: {
+// 	  prevEl: ".records__button-prev",
+// 	  nextEl: ".records__button-next"
+// 	},
+// 	// breakpoints: {
+// 	//   769: {
+// 	// 	  slidesPerView: 'auto',
+// 	// 	  spaceBetween: 20,
+// 	//   }
+// 	// },
+//   });
 
 /* Валидация формы ======================================================================================
 * В константу записывает нужную форму

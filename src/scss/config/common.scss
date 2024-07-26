@@ -27,7 +27,7 @@ h1, h2 {
     color: #fdb94d;
 }
 
-h3, p {
+h3, p, li {
         font-size: rem(24);
         color: #c6c6c6;
         @media(max-width:768px){
@@ -51,6 +51,7 @@ h3, p {
 .title-line {
     display: inline-block;
     position: relative;
+    padding-left: rem(163);
     &::before {
         position: absolute;
         content: '';
@@ -58,11 +59,9 @@ h3, p {
         height: rem(1);
         background: #fff;
         top:50%;
-        left: rem(-138);
-        transform: translateX(-25px);
+        left: rem(0);
         @media(max-width:1350px){
             width: rem(78);
-            transform: translateX(0px);
             left: 0;
         }
     }
@@ -290,5 +289,3 @@ input._error {
         padding-top: rem(64);
     }
 }
-
-

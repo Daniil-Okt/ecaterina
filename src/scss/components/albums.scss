@@ -1,11 +1,11 @@
 .albums {
     padding-top: rem(196);
-    padding-bottom: rem(132);
+    // padding-bottom: rem(132);
     position: relative;
  
     @media(max-width:768px){
         padding-top: rem(96);
-        padding-bottom: rem(32);
+        // padding-bottom: rem(32);
     }
 
     &::before {
@@ -14,7 +14,7 @@
         width: rem(1920);
         height: rem(3348);
         background: url(@img/albums-fon.png) no-repeat center center / contain;
-        top:rem(-450);
+        bottom:rem(-650);
         right: 0;
         z-index: -1;
         pointer-events: none;
@@ -23,19 +23,22 @@
             width: rem(1520);
             height: rem(2948);
         }
+        @media(max-width:1040px){
+            bottom:rem(300);
+        }
         @media(max-width:768px){
             background: url(@img/albums-fon-mob.png) no-repeat center center / contain;
-            top:rem(0);
+            bottom:rem(300);
             width: rem(768);
             height: rem(1900);
             opacity: 1;
         }
         @media(max-width:420px){
             background: url(@img/albums-fon.png) no-repeat center center / contain;
-            top:rem(-500);
+            bottom:rem(-100);
             width: rem(1070);
             height: rem(2498);
-            opacity: 0.3;
+            opacity: 0.7;
         }
     }
     &__container {
@@ -69,6 +72,7 @@
     padding-bottom: rem(32);
     border-top: 1px solid #646464;
     overflow: hidden;
+    cursor: pointer;
     &:last-child {
         border-bottom: 1px solid #646464;
     }
@@ -175,10 +179,13 @@
         background-color: rgba(255, 255, 255, 0.1);
         min-height: rem(70);
         max-width: 100%;
+        
         &:hover {
             background-color: rgba(255, 255, 255, 0.3);
         }
-
+        svg {
+            transition: all 0.3s ease  0s;
+        }
         @media(max-width:1600px){
             padding: rem(16);
             font-size: rem(16);
@@ -220,9 +227,9 @@
     }
 
     &__img-body {
-        display: block;
-        @media(min-width:1041px){
-            display: none;
+        display: none;
+        @media(max-width:1040px){
+            display: block;
         }
     }
 }

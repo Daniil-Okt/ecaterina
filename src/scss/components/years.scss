@@ -67,6 +67,32 @@
         &:first-child {
             // margin-top: 0 !important;
         }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+        }
+        li {
+            position: relative;
+            padding-left: rem(80);
+            &::before {
+                position: absolute;
+                content: '';
+                width: rem(48);
+                height: rem(1);
+                background: rgba(255, 255, 255, 1);
+                top:50%;
+                transform: translateY(-50%);
+                left: 0;
+                @media(max-width:450px){
+                    width: rem(32);
+                }
+            }
+            @media(max-width:450px){
+                padding-left: rem(64);
+            }
+        }
     }
 
     &__row-text {
