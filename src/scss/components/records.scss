@@ -7,22 +7,22 @@
         // padding-bottom: rem(32);
     }
 
- 
-    &::before {
-        position: absolute;
-        content: '';
-        width: rem(1920);
-        height: rem(3666);
-        background: url(@img/records-fon.png) no-repeat center center / contain;
-        top:rem(-480);
-        // top: 0;
-        left: 0;
-        z-index: -1;
-        pointer-events: none;
-        @media(max-width:1440px){
-            display: none;
-        }
-    }
+    // &::before {
+    //     position: absolute;
+    //     content: '';
+    //     width: rem(1920);
+    //     height: rem(3666);
+    //     background: url(@img/records-fon.png) no-repeat center center / contain;
+    //     top:rem(-480);
+    //     // top: 0;
+    //     left: 0;
+    //     z-index: -1;
+    //     pointer-events: none;
+    //     @media(max-width:1440px){
+    //         display: none;
+    //     }
+    // }
+    
     &__container {
     }
 
